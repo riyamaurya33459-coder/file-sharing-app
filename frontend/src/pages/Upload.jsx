@@ -33,7 +33,7 @@ export default function Upload() {
     }
 
     try {
-      const res = await fetch('https://file-sharing-backend-k7td.onrender.com', {
+      const res = await fetch('https://file-sharing-backend-k7td.onrender.com/api/files/upload', {
         method: 'POST',
         body: formData,
       });
