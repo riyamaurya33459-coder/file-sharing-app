@@ -7,7 +7,7 @@ export default function PublicFiles() {
   useEffect(() => {
     const fetchPublicFiles = async () => {
       try {
-        const res = await fetch('http://localhost:5000/api/files/public');
+        const res = await fetch('https://https://file-sharing-backend-k7td.onrender.com');
         const data = await res.json();
         setFiles(data);
         setLoading(false);
@@ -21,7 +21,7 @@ export default function PublicFiles() {
     fetchPublicFiles();
   }, []);
 
-  const fileURL = (filename) => `http://localhost:5000/uploads/${filename}`;
+  const fileURL = (filename) => `https://https://file-sharing-backend-k7td.onrender.com`;
 
   return (
     <div className="min-h-screen bg-blue-50 px-4 py-10">
@@ -64,7 +64,7 @@ export default function PublicFiles() {
 
                       {/* Force download */}
                       <a
-  href={`http://localhost:5000/api/files/download/${file.filePath}`}
+  href={`https://https://file-sharing-backend-k7td.onrender.com`}
   className="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded"
 >
   Download

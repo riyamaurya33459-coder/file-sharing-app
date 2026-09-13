@@ -9,7 +9,7 @@ export default function Signup() {
 
   const handleSignup = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/auth/signup', {
+      const response = await fetch('https://https://file-sharing-backend-k7td.onrender.com/api/auth/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

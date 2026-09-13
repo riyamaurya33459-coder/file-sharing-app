@@ -13,7 +13,7 @@ export default function AddExpense() {
     if (!user) return navigate('/login');
 
     try {
-      const response = await fetch('http://localhost:5000/api/expenses/add', {
+      const response = await fetch('https://https://file-sharing-backend-k7td.onrender.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
