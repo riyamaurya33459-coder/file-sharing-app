@@ -8,7 +8,7 @@ export default function Login() {
 
   const handleLogin = async () => {
     try {
-      const response = await fetch('https://https://file-sharing-backend-k7td.onrender.com/api/auth/login', {
+      const response = await fetch('https://file-sharing-backend-k7td.onrender.com/api/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
