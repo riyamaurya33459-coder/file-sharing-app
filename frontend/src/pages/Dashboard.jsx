@@ -9,7 +9,7 @@ export default function Dashboard() {
     const user = JSON.parse(localStorage.getItem('loggedInUser'));
     if (!user) return navigate('/login');
 
-    fetch(`http://localhost:5000/api/expenses/${user.email}`)
+    fetch(`http:///api/expenses/${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data)

@@ -12,7 +12,7 @@ export default function Profile() {
 
     const fetchFiles = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/files/user/${user._id}`);
+        const res = await fetch(`https://file-sharing-app-bjia.onrender.com/api/files/user/${user._id}`);
         const data = await res.json();
         if (res.ok) setFiles(data);
         else alert(data.message || 'Could not fetch your files');
@@ -33,7 +33,7 @@ export default function Profile() {
 
   const handleUpdate = async (fileId) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/files/${fileId}`, {
+      const res = await fetch(`https://file-sharing-app-bjia.onrender.com/api/files/${fileId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ visibility, accessCode }),
@@ -59,7 +59,7 @@ export default function Profile() {
     if (!window.confirm('Are you sure you want to delete this file?')) return;
 
     try {
-      const res = await fetch(`http://localhost:5000/api/files/${fileId}`, {
+      const res = await fetch(`https://file-sharing-app-bjia.onrender.com/api/files/${fileId}`, {
         method: 'DELETE',
       });
 

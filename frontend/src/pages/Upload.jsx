@@ -33,7 +33,7 @@ export default function Upload() {
     }
 
     try {
-      const res = await fetch('http://localhost:5000/api/files/upload', {
+      const res = await fetch('https://file-sharing-app-bjia.onrender.com/api/files/upload', {
         method: 'POST',
         body: formData,
       });

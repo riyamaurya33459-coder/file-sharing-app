@@ -8,7 +8,7 @@ export default function SearchPrivateFile() {
 
   const handleCodeSubmit = async () => {
     try {
-      const res = await fetch(`http://localhost:5000/api/files/private/${code}`);
+      const res = await fetch(`https://file-sharing-app-bjia.onrender.com/api/files/private/${code}`);
       const data = await res.json();
       if (res.ok) {
         setFile(data);
@@ -24,7 +24,7 @@ export default function SearchPrivateFile() {
 
   const handleAccess = async (action) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/files/verify`, {
+      const res = await fetch(`https://file-sharing-app-bjia.onrender.com/api/files/verify`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ code, password }),
@@ -33,12 +33,12 @@ export default function SearchPrivateFile() {
       const result = await res.json();
       if (!res.ok) return alert(result.message || 'Invalid password');
 
-      const fileUrl = `http://localhost:5000/uploads/${file.filePath}`;
+      const fileUrl = `https://file-sharing-app-bjia.onrender.com/uploads/${file.filePath}`;
       if (action === 'open') {
         window.open(fileUrl, '_blank');
       } else if (action === 'download') {
         const link = document.createElement('a');
-        link.href = `http://localhost:5000/api/files/download/${file.filePath}`;
+        link.href = `https://file-sharing-app-bjia.onrender.com/api/files/download/${file.filePath}`;
         link.download = file.filename;
         document.body.appendChild(link);
         link.click();

@@ -7,7 +7,7 @@ export default function PublicFiles() {
   useEffect(() => {
     const fetchPublicFiles = async () => {
       try {
-        const res = await fetch('http://localhost:5000/api/files/public');
+        const res = await fetch('https://file-sharing-app-bjia.onrender.com/api/files/public');
         const data = await res.json();
         setFiles(data);
         setLoading(false);
@@ -21,8 +21,7 @@ export default function PublicFiles() {
     fetchPublicFiles();
   }, []);
 
-  const fileURL = (filename) => `http://localhost:5000/uploads/${filename}`;
-
+  const fileURL = (filename) => `https://file-sharing-app-bjia.onrender.com/uploads/${filename}`;
   return (
     <div className="min-h-screen bg-blue-50 px-4 py-10">
       <div className="max-w-5xl mx-auto bg-white p-8 rounded-lg shadow">
@@ -64,7 +63,7 @@ export default function PublicFiles() {
 
                       {/* Force download */}
                       <a
-  href={`http://localhost:5000/api/files/download/${file.filePath}`}
+  href={`https://file-sharing-app-bjia.onrender.com/api/files/download/${file.filePath}`}
   className="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded"
 >
   Download
